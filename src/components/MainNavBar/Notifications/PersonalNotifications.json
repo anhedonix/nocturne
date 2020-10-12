@@ -1,0 +1,24 @@
+[
+  {
+    "message": "new cars have been uploaded click on the link to access new car models",
+    "read": true,
+    "time": "24/06/2020  05:30am",
+    "link": "https://saddlesindia.com/use-of-leather-through-time/"
+  },
+  {
+    "message": "new materials have been uploaded click on the link to access new car materials",
+    "read": false,
+    "time": "15/10/2020  5:20pm"
+  },
+  {
+    "message": "anonymous users have been granted access for 4 cars",
+    "read": false,
+    "time": "12/06/2020  06:15pm",
+    "link": "https://saddlesindia.com/use-of-leather-through-time/"
+  },
+  {
+    "message": "new color swatch has been added to nappa materials",
+    "read": true,
+    "time": "26/12/2020  08:55am"
+  }
+]
