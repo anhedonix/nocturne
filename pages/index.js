@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import MainLayout from '../src/layout/MainLayout'
 
 export default function Home() {
   return (
@@ -8,9 +9,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.png" />
       </Head>
 
-      <main>Nocturne</main>
-
-      <footer>Footer</footer>
+      <MainLayout>
+        <main>Nocturne base</main>
+        <footer>Footer</footer>
+      </MainLayout>
     </div>
   )
 }
