@@ -161,12 +161,14 @@ const Content = () => {
                       setConfirmDelete(false)
                       setEditMode(false)
                       setIsEdited(false)
-                      CONTENT[contentType].delete(contentId).then(() => {
-                        router.push(
-                          '/dashboard/[contentType]',
-                          `/dashboard/${contentType}`
-                        )
-                      })
+                      CONTENT[contentType]
+                        .delete(contentType, contentId)
+                        .then(() => {
+                          router.push(
+                            '/dashboard/[contentType]',
+                            `/dashboard/${contentType}`
+                          )
+                        })
                     }}
                     color="primary"
                     autoFocus
