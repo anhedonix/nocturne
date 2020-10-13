@@ -11,16 +11,22 @@ const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
     height: '100vh',
+    maxHeight: '100vh',
     display: 'flex',
     flexDirection: 'column',
+    overflowY: 'auto',
   },
   container: {
+    overflowY: 'auto',
     padding: '0',
     flexGrow: '1',
     display: 'flex',
     flexDirection: 'column',
     position: 'relative',
     alignItems: 'center',
+    maxHeight: '100%',
+    marginBottom: 'auto',
+    marginTop: 'auto',
   },
 }))
 

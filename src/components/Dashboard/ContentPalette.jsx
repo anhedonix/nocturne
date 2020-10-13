@@ -7,6 +7,7 @@ import * as CONTENT from '../../constants/contentTypes'
 import Loader from '../Loaders/Loading'
 import Swatch from './Swatch'
 import ContentPaletteToolbar from './Content/ContentPaletteToolbar'
+import { Scrollbars } from 'react-custom-scrollbars'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -16,6 +17,8 @@ const useStyles = makeStyles(theme => ({
     padding: '0 0rem',
     minWidth: '300px',
     position: 'relative',
+    minWidth: '25vw',
+    maxWidth: '500px',
   },
   list: {
     padding: '0',
@@ -103,11 +106,18 @@ const ContentPalette = () => {
             deleteSelected={deleteSelected}
             selected={selected}
           />
-          <List className={classes.list}>
-            {data.map(i => (
-              <Swatch {...i} key={i.uid} select={select} unselect={unselect} />
-            ))}
-          </List>
+          <Scrollbars>
+            <List className={classes.list}>
+              {data.map(i => (
+                <Swatch
+                  {...i}
+                  key={i.uid}
+                  select={select}
+                  unselect={unselect}
+                />
+              ))}
+            </List>
+          </Scrollbars>
         </>
       )}
     </div>

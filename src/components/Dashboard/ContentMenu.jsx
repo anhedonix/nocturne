@@ -9,6 +9,7 @@ import ListItemText from '@material-ui/core/ListItemText'
 import Divider from '@material-ui/core/Divider'
 import DashboardIcon from '@material-ui/icons/Dashboard'
 import { useRouter } from 'next/router'
+import { Scrollbars } from 'react-custom-scrollbars'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -16,6 +17,8 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
     borderRight: `1px solid ${theme.palette.divider}`,
     padding: '0',
+    width: '15vw',
+    maxWidth: '260px',
   },
   item: {
     paddingLeft: '2rem',
@@ -60,9 +63,12 @@ const ContentMenu = () => {
         </ListItem>
       </Link>
       <Divider />
-      {AdminContentTypes.map(el => (
-        <MenuItem {...el} key={el.ID} />
-      ))}
+
+      <Scrollbars>
+        {AdminContentTypes.map(el => (
+          <MenuItem {...el} key={el.ID} />
+        ))}
+      </Scrollbars>
     </List>
   )
 }

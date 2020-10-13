@@ -14,16 +14,22 @@ import ContentEditor from './ContentEditor'
 import ContentViewer from './ContentViewer'
 import Loader from '../../Loaders/Loading'
 import * as CONTENT from '../../../constants/contentTypes'
+import { Scrollbars } from 'react-custom-scrollbars'
 
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: '1',
     position: 'relative',
+    display: 'flex',
+    flexDirection: 'column',
   },
   contentToolbar: {
     padding: '0.5rem',
     display: 'flex',
     justifyContent: 'flex-end',
+  },
+  contentBin: {
+    flexGrow: '1',
   },
   editButton: {
     display: 'block',
@@ -201,21 +207,26 @@ const Content = () => {
           )}
         </ButtonGroup>
       </Paper>
-      {editMode ? (
-        <ContentEditor
-          data={data}
-          contentType={contentType}
-          contentId={contentId}
-          isEdited={setIsEdited}
-          currentData={setCData}
-        />
-      ) : (
-        <ContentViewer
-          data={data}
-          contentType={contentType}
-          contentId={contentId}
-        />
-      )}
+
+      <Scrollbars>
+        <div className={classes.contentBin}>
+          {editMode ? (
+            <ContentEditor
+              data={data}
+              contentType={contentType}
+              contentId={contentId}
+              isEdited={setIsEdited}
+              currentData={setCData}
+            />
+          ) : (
+            <ContentViewer
+              data={data}
+              contentType={contentType}
+              contentId={contentId}
+            />
+          )}
+        </div>
+      </Scrollbars>
     </div>
   ) : null
 }
